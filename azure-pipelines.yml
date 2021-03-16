@@ -28,6 +28,7 @@ steps:
     pathToPublish: '$(build.artifactStagingDirectory)'
     artifactName: 'outputs'
     artifactType: 'container'
+    
 - task: AppCenterDistribute@3
   inputs:
     serverEndpoint: 'appcenter-mnelli'
