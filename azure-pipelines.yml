@@ -23,4 +23,18 @@ steps:
     PathtoPublish: '$(Agent.BuildDirectory)' 
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: CopyFiles@2
+  inputs:
+    contents: '**/*.apk'
+    targetFolder: '$(build.artifactStagingDirectory)'
+
+- task: AppCenterDistribute@3
+  inputs:
+    serverEndpoint: 'appcenter-mnelli'
+    appSlug: 'mnelli-org/testazureappbuild'
+    appFile: '$(build.artifactStagingDirectory)/app-release-unsigned.apk'
+    symbolsOption: 'Android'
+    releaseNotesOption: 'input'
+    destinationType: 'groups'
   
