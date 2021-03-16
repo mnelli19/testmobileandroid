@@ -18,4 +18,9 @@ steps:
     javaHomeOption: 'JDKVersion'
     sonarQubeRunAnalysis: false
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Agent.BuildDirectory)' 
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
   
