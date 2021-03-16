@@ -33,7 +33,7 @@ steps:
   inputs:
     serverEndpoint: 'appcenter-mnelli'
     appSlug: 'mnelli-org/testazureappbuild'
-    appFile: '$(build.artifactStagingDirectory)/app-release-unsigned.apk'
+    appFile: '$(build.artifactStagingDirectory)/app/build/outputs/apk/release/app-release-unsigned.apk'
     symbolsOption: 'Android'
     releaseNotesOption: 'input'
     releaseNotesInput: 'prova distribuzione'
