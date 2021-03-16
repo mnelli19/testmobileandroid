@@ -18,6 +18,13 @@ steps:
     javaHomeOption: 'JDKVersion'
     sonarQubeRunAnalysis: false
 
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '**/*.apk'
+    apksignerKeystoreFile: 'debug.jks'
+    apksignerKeystorePassword: '$(keystorepassword)'
+    apksignerKeystoreAlias: '$(keystorealias)'
+
 - task: CopyFiles@2
   inputs:
     contents: '**/*.apk'
