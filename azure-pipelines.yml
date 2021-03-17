@@ -31,7 +31,7 @@ steps:
     apksignerKeystoreFile: 'debug.jks'
     apksignerKeystorePassword: '$(keystorepassword)'
     apksignerKeystoreAlias: '$(keystorealias)'
-    apksignerKeyPassword: '123456'
+    apksignerKeyPassword: '$(keystorepassword)'
     zipalign: false
 
 - task: PublishBuildArtifacts@1
