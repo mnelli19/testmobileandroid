@@ -49,5 +49,5 @@ steps:
     releaseNotesOption: 'input'
     releaseNotesInput: 'prova distribuzione'
     destinationType: 'groups'
-    distributionGroupId: 'tester'
+    distributionGroupId: '6e7f64e9-0be1-44ba-a5a7-2e1dd8a52ef7'
   
