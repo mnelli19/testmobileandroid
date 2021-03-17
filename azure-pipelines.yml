@@ -18,23 +18,27 @@ steps:
     javaHomeOption: 'JDKVersion'
     sonarQubeRunAnalysis: false
 
-- task: AndroidSigning@3
-  inputs:
-    apkFiles: '**/*.apk'
-    apksignerKeystoreFile: 'debug.jks'
-    apksignerKeystorePassword: '$(keystorepassword)'
-    apksignerKeystoreAlias: '$(keystorealias)'
+
 
 - task: CopyFiles@2
   inputs:
     contents: '**/*.apk'
     targetFolder: '$(build.artifactStagingDirectory)'
 
+- task: AndroidSigning@3
+  inputs:
+    apkFiles: '$(build.artifactStagingDirectory)/app/build/outputs/apk/release/app-release-unsigned.apk'
+    apksignerKeystoreFile: 'debug.jks'
+    apksignerKeystorePassword: '$(keystorepassword)'
+    apksignerKeystoreAlias: '$(keystorealias)'
+
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: '$(build.artifactStagingDirectory)'
     artifactName: 'outputs'
     artifactType: 'container'
+
+
 
 - task: AppCenterDistribute@3
   inputs:
