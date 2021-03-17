@@ -18,8 +18,6 @@ steps:
     javaHomeOption: 'JDKVersion'
     sonarQubeRunAnalysis: false
 
-
-
 - task: CopyFiles@2
   inputs:
     contents: '**/*.apk'
