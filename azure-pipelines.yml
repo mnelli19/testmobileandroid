@@ -58,8 +58,8 @@ steps:
     organization: 'mnelli19'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: 'mnelli_testmobileandroid'
-    cliProjectName: 'mnelli_testmobileandroid'
+    cliProjectKey: 'mnelli19_testmobileandroid'
+    cliProjectName: 'mnelli19_testmobileandroid'
     cliSources: '.'
 
 - task: SonarCloudAnalyze@1
