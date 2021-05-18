@@ -54,12 +54,12 @@ steps:
   
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: 'SonarCloud-mnelli-test'
-    organization: 'mnelli'
+    SonarCloud: 'SonarCloudGithub-mnelli'
+    organization: 'mnelli19'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: 'testSonarCloud01'
-    cliProjectName: 'testSonarCloud01'
+    cliProjectKey: 'mnelli_testmobileandroid'
+    cliProjectName: 'mnelli_testmobileandroid'
     cliSources: '.'
 
 - task: SonarCloudAnalyze@1
@@ -67,3 +67,4 @@ steps:
 - task: SonarCloudPublish@1
   inputs:
     pollingTimeoutSec: '300'
+
