@@ -54,12 +54,12 @@ steps:
   
 - task: SonarCloudPrepare@1
   inputs:
-    SonarCloud: 'SonarCloudGithub-mnelli'
-    organization: 'mnelli'
+    SonarCloud: 'SonarCloud-mnelli-test'
+    organization: 'manual-org'
     scannerMode: 'CLI'
     configMode: 'manual'
-    cliProjectKey: 'mnelli_testmobileandroid'
-    cliProjectName: 'mnelli_testmobileandroid'
+    cliProjectKey: 'mnelli_testgithub'
+    cliProjectName: 'mnelli_testgithub'
     cliSources: '.'
 
 - task: SonarCloudAnalyze@1
